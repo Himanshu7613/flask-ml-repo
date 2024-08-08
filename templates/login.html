@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="">
+    {{forrm.hidden_tag()}}
+    <div>
+        {{forrm.username.label}}
+        {{forrm.username}}
+        {% if forrm.username.error %}
+            {% for er in forrm.username.error %}
+                <div>{{er}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div>
+        {{forrm.password.label}}
+        {{forrm.password}}
+        {% if forrm.password.error %}
+            {% for er in forrm.password.error %}
+                <div>{{er}}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div>
+        {{forrm.submit}}
+    </div>
+</form>
+
+{% endblock content %}
